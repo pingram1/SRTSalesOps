@@ -1,0 +1,41 @@
+---
+description: Conventions for SRTSalesOps — Start Right Tutoring internal sales app
+alwaysApply: true
+---
+
+# SRTSalesOps — Project Conventions
+
+## What this repo is
+
+Private internal app for Start Right Tutoring (Pierre only). Gemini research → pipeline → rate-card quote → one-tier PDF.
+
+This is **not** the public website. Never copy prices into `/Users/pierrei/StartRightTutoringLocal/WebsiteNewLocal`.
+
+## Stack
+
+- Single Vite + React 18 + React Router app at the repo root
+- Language: **JSX** (not TypeScript)
+- Styling: Tailwind + CSS variables; alias `@/` → `src/`
+- UI: shadcn/ui (New York) under `src/components/ui/`
+- Icons: Lucide
+- Dev server: `127.0.0.1:3001` only
+
+## Do
+
+- Read `docs/SPEC.md` and `docs/BUILD-PLAN.md` before adding features
+- Copy prices from `docs/sales/service-tiers.md` — markdown wins if JS drifts
+- Brand: **Start Right Tutoring**; navy + cyan; Space Grotesk / Inter
+- Client PDF shows **one tier** and no internal scores
+
+## Don't
+
+- Don't add Next.js, Prisma, Stripe, HubSpot, or Outlook
+- Don't call the Gemini API in v1 (paste import only)
+- Don't bind Vite to `0.0.0.0` or deploy until auth exists
+- Don't discount tier prices in the UI — move the client down a tier instead
+- Don't put Learning / OpSRT student records in this CRM
+
+## Commands (once scaffolded)
+
+- Dev: `npm run dev` → http://127.0.0.1:3001
+- Test: `npm test`
